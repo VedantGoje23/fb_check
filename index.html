@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>3</title>
+	<title>4</title>
 </head>
 <style>
 	#profile{
@@ -23,14 +23,14 @@
       version    : 'v2.8'
     });
       
-    FB.logout(function(response){
-		  setElements(flase);
-		}
 	FB.getLoginStatus(function(response) {
 		statusChangeCallback(response);
 	});   
   };
 
+    FB.logout(function(response){
+		  setElements(flase);
+		}
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
