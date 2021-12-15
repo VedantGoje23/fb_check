@@ -14,7 +14,7 @@
       appId      : '4932847886745558',
       cookie     : true,
       xfbml      : true,
-      version    : 'v13.0'
+      version    : 'v2.8'
     });
       
     
@@ -33,10 +33,12 @@
 	
 	function statusChangeCallback(response){
 		if(response.status === 'connected'){
-			alert("loggedIN");
+			console.log("loggedin");
+			setElements(true);
 		}
 		else{
-			alert("something wrong");
+			console.log("wrong");
+			setElements(false);
 		}
 	}
 	
@@ -47,6 +49,18 @@
 	  });
 	}
 
+	function setElements(isLoggedIn){
+		if(isLoggedIn){
+			document.getElementById("profile").style.display='block';
+//			document.getElementById("fb-btn").style.display='none';			
+		}
+		else{
+			document.getElementById("profile").style.display='none';
+//			document.getElementById("fb-btn").style.display='block';
+			
+		}
+	}
+	
 </script>
 
 <fb:login-button style="background-color: aqua; margin-left: 25px;"
@@ -58,6 +72,8 @@
 <!--	
 	<div class="fb-login-button" data-width="35" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email, user_birthday" onlogin="checkLoginState()"></div>
 -->
+	<div id="status"></div>
+	<div id="profile" style="background-color: aqua"></div>
 	
 	
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script> 
