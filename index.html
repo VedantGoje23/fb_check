@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>dd</title>
+	<title>dds</title>
 </head>
 <style>
 	#profile{
@@ -49,7 +49,7 @@
 	}
 	
 	function testAPI(){
-		FB.api('/me?fields=name,email,birthday,picture', function(response){
+		FB.api('/me?fields=name,email,birthday,picture.url', function(response){
 			if(response && !response.error){
 				console.log(response);
 				buildProfile(response);
