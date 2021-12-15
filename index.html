@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>5</title>
+	<title>6</title>
 </head>
 <style>
 	#profile{
@@ -58,24 +58,24 @@
 		if(isLoggedIn){
 			document.getElementById("profile").style.display='block';
 			document.getElementById("FBlogout").style.display='block';
-//			document.getElementById("fb-btn").style.display='none';			
+			document.getElementById("fb-btn").style.display='none';			
 		}
 		else{
 			document.getElementById("profile").style.display='none';
 			document.getElementById("FBlogout").style.display='none';
-//			document.getElementById("fb-btn").style.display='block';
+			document.getElementById("fb-btn").style.display='block';
 			
 		}
 	}
-// 	function logoutFB(){
-// 		FB.logout(function(response){
-// 		  setElements(flase);
-// 		}
-// 	}
+	function logoutFB(){
+		FB.logout(function(response){
+		  setElements(flase);
+		});
+	}
 	
 </script>
 
-<fb:login-button style="background-color: aqua; margin-left: 25px;"
+<fb:login-button id="fb-btn" style="background-color: aqua; margin-left: 25px;"
   scope="public_profile,email, user_birthday"
   onlogin="checkLoginState()" class="fb-login-button" data-width="3" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false">login
 </fb:login-button>
