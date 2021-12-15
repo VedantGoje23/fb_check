@@ -40,6 +40,7 @@
 		if(response.status === 'connected'){
 			console.log("loggedin");
 			setElements(true);
+			testAPI();
 		}
 		else{
 			console.log("wrong");
@@ -47,6 +48,22 @@
 		}
 	}
 	
+	function testAPI(){
+		FB.api('/me?fields=name,email,birthday', function(response){
+			if(response && !response.error){
+				buildProfile(response);
+			}
+		})
+	}
+	
+	function buildProfile(user){
+		let profile=`
+		<h3 class="userName">${user.name}</h3>
+		<h5 class="userEmail">${user.email}</h5>
+		<h5 class="userBirthday">${user.birthday}</h5>
+		`;
+		document.getElementById('profile').innerHTML = profile;
+	}
 	
 	function checkLoginState() {
 	  FB.getLoginStatus(function(response) {
@@ -77,8 +94,8 @@
 	
 </script>
 
-<fb:login-button id="fb-btn" style="background-color: aqua; margin-left: 25px;"
-  scope="public_profile,email, user_birthday"
+<fb:login-button id="fb-btn"
+  scope="public_profile,email"
   onlogin="checkLoginState()" class="fb-login-button" data-width="3" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false">login
 </fb:login-button>
 	
