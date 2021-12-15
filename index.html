@@ -23,7 +23,9 @@
       version    : 'v2.8'
     });
       
-    
+    FB.logout(function(response){
+		  setElements(flase);
+		}
 	FB.getLoginStatus(function(response) {
 		statusChangeCallback(response);
 	});   
