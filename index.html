@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>15</title>
+	<title>115</title>
 </head>
 <style>
 	#profile{
@@ -51,13 +51,14 @@
 	function testAPI(){
 		FB.api('/me?fields=name,email,birthday,{fieldname_of_type_ProfilePictureSource}', function(response){
 			if(response && !response.error){
+				console.log(response);
 				buildProfile(response);
 			}
 		})
 	}
 	
 	function buildProfile(user){
-		console.log(user);
+		
 		let profile=`
 		<h3 class="userName">${user.name}</h3>
 		<h5 class="userEmail">${user.email}</h5>
