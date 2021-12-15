@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>qw</title>
+	<title>ss</title>
 </head>
 <style>
 	#profile{
@@ -51,7 +51,7 @@
 	function testAPI(){
 		FB.api('/me?fields=name,email,birthday,picture', function(response){
 			if(response && !response.error){
-				console.log(response.picture);
+				console.log(response.picture.data.url);
 				buildProfile(response);
 			}
 		})
