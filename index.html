@@ -3,7 +3,9 @@
 <head>
 	
 </head>
+<style>
 	
+</style>
 <body>
 	
 <script>
@@ -12,7 +14,7 @@
       appId      : '4932847886745558',
       cookie     : true,
       xfbml      : true,
-      version    : 'v13.0'
+      version    : 'v2.8'
     });
       
     
@@ -31,12 +33,10 @@
 	
 	function statusChangeCallback(response){
 		if(response.status === 'connected'){
-// 			alert("loggedIN");
-			consol.log(:loggein);
+			alert("loggedIN");
 		}
 		else{
-// 			alert("something wrong");
-			consol.log(wrong);
+			alert("something wrong");
 		}
 	}
 	
@@ -46,19 +46,20 @@
 		statusChangeCallback(response);
 	  });
 	}
+
 </script>
-	
-	
-<!-- 	<div class="fb-login-button" id="login" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
 
-	<div id="status"></div>
-
-<fb:login-button 
+<fb:login-button style="background-color: aqua; margin-left: 25px;"
   scope="public_profile,email, user_birthday"
-  onlogin="checkLoginState()">
+  onlogin="checkLoginState()" class="fb-login-button" data-width="3" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false">login
 </fb:login-button>
 	
-		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script> 
-
+	
+<!--	
+	<div class="fb-login-button" data-width="35" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email, user_birthday" onlogin="checkLoginState()"></div>
+-->
+	
+	
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script> 
 </body>
 </html>
