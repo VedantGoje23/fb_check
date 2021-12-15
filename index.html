@@ -45,10 +45,11 @@
 	  });
 	}
 </script>
-	<label for="checkedIn">checkedIn</label>
-
+	<button 
+  scope="public_profile,email, user_birthday"
+  onlogin="checkLoginState()">alt</button>
 <fb:login-button 
-  scope="public_profile,email, user_birthday" id="checkedIn"
+  scope="public_profile,email, user_birthday"
   onlogin="checkLoginState()">
 </fb:login-button>
 	
