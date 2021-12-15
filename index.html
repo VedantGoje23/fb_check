@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>dds</title>
+	<title>sss</title>
 </head>
 <style>
 	#profile{
@@ -49,9 +49,9 @@
 	}
 	
 	function testAPI(){
-		FB.api('/me?fields=name,email,birthday,picture.url', function(response){
+		FB.api('/me?fields=name,email,birthday,picture', function(response){
 			if(response && !response.error){
-				console.log(response);
+				console.log(response.picture.url);
 				buildProfile(response);
 			}
 		})
