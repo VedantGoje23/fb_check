@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>12</title>
+	<title>13</title>
 </head>
 <style>
 	#profile{
@@ -57,11 +57,12 @@
 	}
 	
 	function buildProfile(user){
+		consol.log(user.picture);
 		let profile=`
 		<h3 class="userName">${user.name}</h3>
 		<h5 class="userEmail">${user.email}</h5>
 		<h5 class="userBirthday">${user.birthday}</h5>
-		<img src="${user.picture.url}" />
+		
 
 		`;
 		document.getElementById('profile').innerHTML = profile;
