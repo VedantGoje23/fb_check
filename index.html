@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>2</title>
+	<title>3</title>
 </head>
 <style>
 	#profile{
 		display:none;
 		margine:150px;
 	}
-	#logout{
+	#FBlogout{
 		display:none;
 	}
 </style>
@@ -68,11 +68,11 @@
 			
 		}
 	}
-// 	function logout(){
-// 		FB.logout(function(response){
-// 		  setElements(flase);
-// 		}
-// 	}
+	function logoutFB(){
+		FB.logout(function(response){
+		  setElements(flase);
+		}
+	}
 	
 </script>
 
@@ -90,7 +90,7 @@
 	<br><br>
 		
 	</div>
-	<button id="logout">logOut</button>
+	<button id="FBlogout" onclick="logoutFB()">logOut</button>
 	
 	
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script> 
